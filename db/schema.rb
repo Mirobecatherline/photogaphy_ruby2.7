@@ -15,27 +15,27 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_094324) do
   enable_extension "plpgsql"
 
   create_table "featured_images", force: :cascade do |t|
-    t.string "image_url"
-    t.string "categorry"
+    t.text "image_url"
+    t.text "categorry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "images", force: :cascade do |t|
-    t.string "image_url"
+    t.text "image_url"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "username"
-    t.string "image_url"
-    t.string "password_digest"
+    t.text "name"
+    t.text "email"
+    t.text "username"
+    t.text "image_url"
+    t.text "password_digest"
     t.boolean "approved", default: false
-    t.string "role", default: "user", null: false
+    t.text "role", default: "user", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
